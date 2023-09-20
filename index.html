@@ -1,185 +1,269 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="description" content="Example pure html-css-js web site">
-    <meta name="author" content="Nessoumou Wilfried">
-    <link rel="stylesheet" href="./css/style.css" media="all">
-    <title>Example pure html-css-js web site
-    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content="Example pure html-css-js web site" />
+    <meta name="author" content="Nessoumou Wilfried" />
+    <link rel="stylesheet" href="./css/style.css" media="all" />
+    <title>Example pure html-css-js web site</title>
   </head>
-  
+
   <body>
     <header>
-      <span>Interactive CV</span>
+      <span id="header_logo">Interactive CV</span>
+      <nav>
+        <ul>
+          <li>
+            <a href="#introducing">Présentation</a>
+          </li>
+          <li>
+            <a href="#my-cv">Mon Cv</a>
+          </li>
+          <li>
+            <a href="#cert">Diplômes et certifications</a>
+          </li>
+          <li>
+            <a href="#exp">Mon expérience en bref</a>
+          </li>
+          <li>
+            <a href="#vision">Vision développeur et développement</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    
-    <nav>
-      <ul>
-	<li>
-	  <a href="#introducing">Présentation</a>
-	</li>
-	<li>
-	  <a href="#my-cv">Mon Cv</a>
-	</li>
-	<li>
-	  <a href="#certification">Diplômes et certifications</a>
-	</li>
-	<li>
-	  <a href="#experience">Mon expérience en bref</a>
-	</li>
-	<li>
-	  <a href="#vision">Vision développeur et développement</a>
-	</li>
-      </ul>
-    </nav>
-    
-    <main>
-      <article>
-	<h1 id="top">Example pure html-css-js web site
-	</h1>
 
-	<section>
-	  <h2 id="introducing">Présentation
-	  </h2>
-	<p>
-	  Bonjour, je m'applelle Wilfried et je suis candidat pour un poste de concepteur et développeur (bureautique, mobile, web).
-	  <br>
-	Diplômé d'une
-	  <strong>cerification de niveau VI (bac+3/4)
-	  </strong> en tant que
-	  <strong>concepteur et développeur d'applications
-	  </strong> je suis initié aux langages de programmation
-	  tels que
-	  <strong>HTML
-	  </strong>,
-	  <strong>CSS
-	  </strong>,
-	  <strong>JavaScript
-	  </strong>,
-	  <strong>C/C++
-	  </strong>,
-	  <strong>C#
-	  </strong>,
-	  <strong>Java
-	  </strong>.
-	  <br>
-	Je suis passionné par les nouvelles technologies et la création d'applications en tout genre, site web fullstack interactifs, dynamiques et responsive qui répondent aux besoins
-	  des utiliisateurs et clients.
-	  <br>
-	  Je maîtrise les outils de conceptions graphique comme
-	  <strong>figma
-	  </strong>,
-	  <strong>photoshop
-	  </strong>,
-	  <strong>illustrator
-	  </strong>
-	  ainsi que les frameworks comme
-	  <strong>Bootstrap
-	  </strong>,
-	  <strong>JQuery
-	  </strong>,
-	  <strong>VueJs
-	  </strong>,
-	  <strong>Springboot
-	  </strong>,
-	  <strong>.NET
-	  </strong>.
-	  <br>
-	  Je suis également familier avec les méthodes agiles de gestion de projet, comme le Scrum et Kanban.
-	  <br>
-	Motivé, rigoureux et capable de travailler en équipe ou en autonomie, je pense avoir les compétences et les qualités requises pour rejoindre vore entrprise et participer à vos projets web.
-	</p>
-	</section>
-	
-	<section>
-	  <h2 id="my-cv">Mon CV
-	  </h2>
-	  <a href="./img/cv.png">
-	    <figure>
-	      <img src="./img/cv_small.png" alt="un cv au format miniature" title="cliquez pour agrandir">
-	      <figcaption>Cv de Nessoumou Wilfried</figcaption>
-	    </figure>
-	  </a>
-	<a href="#top">retour haut de page</a>
-	</section>
+    <!-- hero section -->
+    <section id="hero">
+      <div class="hero_text">
+        <h1 style="font-size: 2.5rem">Je suis Wilfried Nessoumou</h1>
+        <p style="font-size: 1.5rem">Et je suis développeur</p>
+      </div>
+      <button class="hero_button">Contactez moi</button>
+    </section>
 
-	<section>
-	  <h2 id="certification">Diplômes et Certifications
-	  </h2>
-	  <a href="./img/certification_concepteur_developpeur_application.png">
-	    <figure>
-	      <img src="./img/certification_concepteur_developpeur_application_small.png" alt="une certification concepteur développeur d'applications au format miniature" title="cliquez pour agrandir">
-	      <figcaption>Certification concepteur développeur d'applications</figcaption>
-	    </figure>
-	  </a>
-	  
-	  <a href="./img/certification_integrateur_developpeur_web.png">
-	    <figure>
-	      <img src="./img/certification_integrateur_developpeur_web_small.png" alt="une certification intégrateur développeur web au format miniature" title="cliquez pour agrandir">
-	      <figcaption>Certification intégrateur développeur web</figcaption>
-	    </figure>	    
-	  </a>
+    <main id="wrapper">
+      <!-- main article -->
+      <article id="top">
+        <h2>Example pure html-css-js web site</h2>
 
+        <!-- introducing section -->
+        <section>
+          <h3 id="introducing">Présentation</h3>
+          <p>
+            Bonjour, je m'applelle Wilfried et je suis candidat pour un poste de
+            concepteur et développeur (bureautique, mobile, web).
+            <br />
+            Diplômé d'une
+            <strong>cerification de niveau VI (bac+3/4) </strong> en tant que
+            <strong>concepteur et développeur d'applications </strong> je suis
+            initié aux langages de programmation tels que
+            <strong>HTML </strong>, <strong>CSS </strong>,
+            <strong>JavaScript </strong>, <strong>C/C++ </strong>,
+            <strong>C# </strong>, <strong>Java </strong>.
+            <br />
+            Je suis passionné par les nouvelles technologies et la création
+            d'applications en tout genre, site web fullstack interactifs,
+            dynamiques et responsive qui répondent aux besoins des utiliisateurs
+            et clients.
+            <br />
+            Je maîtrise les outils de conceptions graphique comme
+            <strong>figma </strong>, <strong>photoshop </strong>,
+            <strong>illustrator </strong>
+            ainsi que les frameworks comme
+            <strong>Bootstrap </strong>, <strong>JQuery </strong>,
+            <strong>VueJs </strong>, <strong>Springboot </strong>,
+            <strong>.NET </strong>.
+            <br />
+            Je suis également familier avec les méthodes agiles de gestion de
+            projet, comme le
+            <strong>Scrum</strong> et <strong>Kanban</strong>.
+            <br />
+            Motivé, rigoureux et capable de travailler en équipe ou en
+            autonomie, je pense avoir les compétences et les qualités requises
+            pour rejoindre vore entrprise et participer à vos projets.
+          </p>
+        </section>
 
-	  <a href="./img/attestation_diplome_bep.png">
-	    <figure>
-	      <img src="./img/attestation_diplome_bep_small.png" alt="une attestation de diplome bep electrotechnique au format miniature" title="cliquez pour agrandir">
-	      <figcaption>Attestation diplôme BEP electrotechnique</figcaption>
-	    </figure>	    
-	  </a>
-	<a href="#top">retour haut de page</a>
-	</section>
+        <!-- my-cv section -->
+        <section id="my-cv">
+          <h3>Mon CV</h3>
+          <a href="./assets/cv.png">
+            <figure>
+              <img class="cv" src="./assets/cv_image.png" width="100" />
+              <img
+                src="./assets/cv_small.png"
+                alt="un cv au format miniature"
+                title="cliquez pour agrandir"
+                style="border-radius: 10px 10px 0 0"
+              />
+              <figcaption>Cv de Nessoumou Wilfried</figcaption>
+            </figure>
+          </a>
+          <a href="#top">retour haut de page </a>
+        </section>
 
-	<section>
-	  <h2 id="experience">Mon expérience en bref
-	  </h2>
-	  <p>
-	    Diplômé de l'enseignement général d'un BEP electrotechnique et après avoir œuvré pendant 8 années au sein d’un fournisseur d’accès internet et téléphonie <br>
-	    en tant que technicien télécoms et réseaux, j’ai décidé de m’investir dans le monde du développement. <br>
-	    Déjà familiarisé avec cet univers en autodidacte pendant plusieurs années, j’ai voulu approfondir mes connaissances par le biais d’un réel enseignement. <br>
-	    J’ai donc suivi une première formation diplômante reconue par l'état en tant que développeur et intégrateur web. <br>
-	    J'ai poursuivi mon enseignement via une certification de niveau supérieur en tant que concepteur et développeur d’applications, ce qui pour moi  était la suite <br>
-	    logique afin devenir un développeur junior compétant. <br>
-	    Aujourd'hui diplômé d'une certification de niveau V (bac+2) en tant que développeur et intégrateur web ainsi
-	    que d'une certification de niveau VI (bac+3/4) en tant que concepteur et développeur d'applications, <br>
-	    j’aimerais à présent intégrer une entreprise et être un développeur à part entière travailler en collaboration sur des projets, <br>
-	    concevoir et développer des applications dans le but d’améliorer le quotidien de nos utilisateurs. <br>
-	    Le développement est pour moi une passion et apporter ma pierre à l’édifice serait une grande satisfaction.
-	  </p>
-	  <a href="./img/lettre_de_recommandation_kertel.png">
-	    <figure>
-	      <img src="./img/lettre_de_recommandation_kertel_small.png" alt="une lettre de recommandation au format miniature" title="cliquez pour agrandir">
-	      <figcaption>Lettre de recommandation (dernier poste occupé)</figcaption>
-	    </figure>
-	  </a>
-	<a href="#top">retour haut de page</a>
-	</section>
-	
-	<section>
-	  <h2 id="vision">Vision de développeur et développement
-	  </h2>
-	  <p>
-	    Selon moi un développeur se doit d'avoir certaines compétences, telles que la communication, le travail en équipe, le partage, mais se doit également d'être autonome et autodidacte. <br>
-	    Il doit se soucier de l'utilisateur et/ou du client. <br>
-	    Un site ou une application se doit d'être ergonomique, effiente, exacte, robuste et autant que faire se peut doit être facilement extensible, maintenable et/ou interoperable. <br>
-	    Une application ou un site se doit aussi d'être sécurisé au vu des informations partagées.<br>
-	    C'est à ce moment que les patrons de conceptions entre en jeux afin de concevoir le type d'application précédemment d'écrit. <br>
-	    Le développeur doit être en mesure de s'informer des nouvelles technologies qui s'offrent à lui ou des normes en vigueur lorsque cela est nécéssaire. <br>
-	    Le travail du développeur n'est pas une mince affaire, mais requiert qu'il soit passioné, et c'est dans ce type de développeur dans lequel je me retrouve.
-	  </p>
-	<a href="#top">retour haut de page</a>
-	</section>
-	
+        <!-- certification section -->
+        <section id="cert">
+          <h3>Diplômes et Certifications</h3>
+          <div class="cert_container">
+            <a
+              href="./assets/certification_concepteur_developpeur_application.png"
+            >
+              <figure>
+                <img class="medal" src="./assets/medal.png" width="100" />
+                <img
+                  src="./assets/certification_concepteur_developpeur_application_small.png"
+                  alt="une certification concepteur développeur d'applications au format miniature"
+                  title="cliquez pour agrandir"
+                  style="border-radius: 5px 5px 0 0"
+                />
+                <figcaption>
+                  Certification concepteur développeur d'applications
+                </figcaption>
+              </figure>
+            </a>
+            <a href="./assets/certification_integrateur_developpeur_web.png">
+              <figure>
+                <img class="medal" src="./assets/medal.png" width="100" />
+                <img
+                  src="./assets/certification_integrateur_developpeur_web_small.png"
+                  alt="une certification intégrateur développeur web au format miniature"
+                  title="cliquez pour agrandir"
+                  style="border-radius: 5px 5px 0 0"
+                />
+                <figcaption>
+                  Certification intégrateur développeur web
+                </figcaption>
+              </figure>
+            </a>
+            <a href="./assets/attestation_diplome_bep.png">
+              <figure>
+                <img class="medal" src="./assets/medal.png" width="100" />
+                <img
+                  src="./assets/attestation_diplome_bep_small.png"
+                  alt="une attestation de diplome bep electrotechnique au format miniature"
+                  title="cliquez pour agrandir"
+                  style="border-radius: 5px 5px 0 0"
+                />
+                <figcaption>
+                  Attestation diplôme BEP electrotechnique
+                </figcaption>
+              </figure>
+            </a>
+          </div>
+          <a href="#top">retour haut de page </a>
+        </section>
+
+        <!-- experience section -->
+        <section id="exp">
+          <h3>Mon expérience en bref</h3>
+          <p>
+            Diplômé de l'enseignement général d'un BEP electrotechnique et après
+            avoir œuvré pendant 8 années au sein d’un fournisseur d’accès
+            internet et téléphonie
+            <br />
+            en tant que technicien télécoms et réseaux, j’ai décidé de
+            m’investir dans le monde du développement.
+            <br />
+            Déjà familiarisé avec cet univers en autodidacte pendant plusieurs
+            années, j’ai voulu approfondir mes connaissances par le biais d’un
+            réel enseignement.
+            <br />
+            J’ai donc suivi une première formation diplômante reconue par l'état
+            en tant que développeur et intégrateur web.
+            <br />
+            J'ai poursuivi mon enseignement via une certification de niveau
+            supérieur en tant que concepteur et développeur d’applications, ce
+            qui pour moi était la suite
+            <br />
+            logique afin devenir un développeur junior compétant.
+            <br />
+            Aujourd'hui diplômé d'une certification de niveau V (bac+2) en tant
+            que développeur et intégrateur web ainsi que d'une certification de
+            niveau VI (bac+3/4) en tant que concepteur et développeur
+            d'applications,
+            <br />
+            j’aimerais à présent intégrer une entreprise et être un développeur
+            à part entière travailler en collaboration sur des projets,
+            <br />
+            concevoir et développer des applications dans le but d’améliorer le
+            quotidien de nos utilisateurs.
+            <br />
+            Le développement est pour moi une passion et apporter ma pierre à
+            l’édifice serait une grande satisfaction.
+          </p>
+          <a href="./assets/lettre_de_recommandation_kertel.png">
+            <figure>
+              <img class="letter" src="./assets/letter.png" width="100" />
+              <img
+                src="./assets/lettre_de_recommandation_kertel_small.png"
+                alt="une lettre de recommandation au format miniature"
+                title="cliquez pour agrandir"
+                width="350"
+                style="border-radius: 10px 10px 0 0"
+              />
+              <figcaption>
+                Lettre de recommandation (dernier poste occupé)
+              </figcaption>
+            </figure>
+          </a>
+          <a href="#top">retour haut de page </a>
+        </section>
+
+        <!-- vision section -->
+        <section id="vision">
+          <h3>Vision de développeur et développement</h3>
+          <p>
+            Selon moi un développeur se doit d'avoir certaines compétences,
+            telles que la communication, le travail en équipe, le partage, mais
+            se doit également d'être autonome et autodidacte.
+            <br />
+            Il doit se soucier de l'utilisateur et/ou du client.
+            <br />
+            Un site ou une application se doit d'être ergonomique, effiente,
+            exacte, robuste et autant que faire se peut doit être facilement
+            extensible, maintenable et/ou interoperable.
+            <br />
+            Une application ou un site se doit aussi d'être sécurisé au vu des
+            informations partagées.
+            <br />
+            C'est à ce moment que les patrons de conceptions entre en jeux afin
+            de concevoir le type d'application précédemment d'écrit.
+            <br />
+            Le développeur doit être en mesure de s'informer des nouvelles
+            technologies qui s'offrent à lui ou des normes en vigueur lorsque
+            cela est nécéssaire.
+            <br />
+            Le travail du développeur n'est pas une mince affaire, mais requiert
+            qu'il soit passioné, et c'est dans ce type de développeur dans
+            lequel je me retrouve.
+          </p>
+          <a href="#top">retour haut de page </a>
+        </section>
       </article>
     </main>
 
-    
     <footer>
-      <small>Copyright &copy; 2023 Redazzalpha. Tous droits réservés.</small>
+      <div class="footer_container">
+        <h2 style="text-decoration: none">Contacts</h2>
+        <address>
+          <ul style="font-size: 1.2rem; flex-direction: column">
+            <li>
+              Mail:
+              <a href="mailto:willness@outlook.fr" style="color: white">
+                willness@outlook.fr</a
+              >
+            </li>
+            <li>
+              N°Tél:
+              <a href="tel:+33617717994" style="color: white">0617717994</a>
+            </li>
+          </ul>
+        </address>
+        <small>Copyright &copy; 2023 Redazzalpha. Tous droits réservés. </small>
+      </div>
     </footer>
-      </body>
+  </body>
 </html>
-
