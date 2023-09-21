@@ -1,0 +1,4 @@
+@keyframes bg-glow {
+    0% {background: whitesmoke url("../assets/bg.png") no-repeat center;}
+    100% {background: whitesmoke url("../assets/bg1.png") no-repeat center;}
+}
