@@ -3,11 +3,13 @@
 let header;
 let heroText;
 let heroBtn;
+let scrollTopBtn;
 let mainTitle;
 let introSection;
 let cvSection;
 let certSection;
-let scrollTopBtn;
+let expSection;
+let visionSection;
 
 // event handlers
 
@@ -48,11 +50,15 @@ window.onload = () => {
   header = document.querySelector("header");
   heroText = document.querySelector(".hero-text");
   heroBtn = document.querySelector(".hero-btn");
-  mainTitle = document.querySelector(".main-title");
   scrollTopBtn = document.querySelector(".scroll-top-btn");
+  mainTitle = document.querySelector(".main-title");
   introSection = document.querySelector("#intro");
   cvSection = document.querySelector("#cv");
   certSection = document.querySelector("#cert");
+  expSection = document.querySelector("#exp");
+  visionSection = document.querySelector("#vision");
+  visionTitle = document.querySelector(".vision_title");
+  visionContent = document.querySelector(".vision_content");
 
   slideTop(header);
   appear(heroText);
@@ -60,6 +66,8 @@ window.onload = () => {
   slideLeft(mainTitle);
   slideRight(introSection);
   slideLeft(cvSection);
-
+  growUp(certSection);
+  slideLeft(expSection);
+  growUp(visionSection);
   window.onscroll = onScroll;
 };

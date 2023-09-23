@@ -84,12 +84,18 @@ a {
 }
 
 #wrapper {
-  padding: 15px 15px 0 15px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 15px 15px 0 15px;
+}
+#wrapper > img {
+  position: absolute;
+  right: 0;
+  bottom: 300px;
+  z-index: -1;
 }
 
 #hero {
@@ -254,16 +260,6 @@ address a {
   cursor: pointer;
 }
 
-#vision {
-  display: block;
-  width: 100%;
-  margin-bottom: 0;
-}
-.vision_content {
-  position: relative;
-  min-height: 540px;
-}
-
 #intro {
   position: relative;
   right: -100vw;
@@ -273,4 +269,25 @@ address a {
   position: relative;
   left: -100vw;
   transition: left 1s linear 1s;
+}
+#cert {
+  transform: scale(0);
+  transition: transform 1.5s linear 1.5s;
+}
+#exp {
+  position: relative;
+  left: -100vw;
+  transition: left 1s linear 2.5s;
+}
+#vision {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  transform: scale(0);
+  transition: transform 1.2s linear 3s;
+}
+.vision_content {
+  position: relative;
+  min-height: 540px;
 }
