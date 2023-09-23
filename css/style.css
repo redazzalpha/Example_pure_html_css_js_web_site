@@ -1,230 +1,276 @@
 @import "fonts.css";
 @import "keyframes.css";
 
+* {
+  overflow-x: hidden;
+}
 body {
-    padding: 0;
-    margin: 0;
-    background: whitesmoke url("../assets/bg.png") no-repeat center;
-    background-size: contain;
-    box-sizing: border-box;
-    animation: bg-glow 4s ease-in alternate infinite;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  background-color: whitesmoke;
+  position: relative;
+  box-sizing: border-box;
+}
+.bg-frame {
+  position: absolute;
+  top: 1350px;
+  background-color: whitesmoke;
+  background-image: url("../assets/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 1500px;
+  z-index: -1;
+  animation: bg-breath 7s ease-in alternate infinite;
+  -webkit-animation: bg-breath 7s ease-in alternate infinite;
+  -moz-animation: bg-breath 7s ease-in alternate infinite;
+  -o-animation: bg-breath 7s ease-in alternate infinite;
 }
 
 header {
-    box-shadow: 1px 1px 15px black;
-    z-index: 2;
-    position: sticky;
-    top:0;
-    font-size: 40px;
-    font-family: 'Expletus Sans', cursive;
-    font-style: italic;
-    display: flex;
-    align-items: center;
-    background:  url("../assets/bg_header.png") no-repeat center;
-    background-size: cover;
-    color: white;
+  position: fixed;
+  width: 100%;
+  top: -100px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background: url("../assets/bg_header.png") no-repeat center;
+  background-size: cover;
+  box-shadow: 1px 1px 15px black;
+  font-family: "Expletus Sans", cursive;
+  font-style: italic;
+  z-index: 2;
+  transition: top 1s linear;
 }
 #header_logo {
-    flex-grow: 1;
+  flex-grow: 1;
+  font-size: 2.2rem;
 }
 
 nav {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 nav ul {
-    display: flex;
+  display: flex;
 }
 nav > ul > li {
-    border: solid grey 1px;
-    margin: 0 5px;
-    border-radius: 5px;
+  border: solid grey 1px;
+  margin: 0 5px;
+  border-radius: 5px;
 }
 nav > ul > li > a {
-    color: inherit;
-    padding: 10px 10px;
-    background-color: black;
-    border-radius: 5px;
-    transition: background-color .2s linear, color .2s linear;
+  color: inherit;
+  padding: 10px 10px;
+  background-color: black;
+  border-radius: 5px;
+  transition: background-color 0.2s linear, color 0.2s linear;
 }
 nav > ul > li > a:hover {
-    background-color: grey;
-    color: black;
+  background-color: grey;
+  color: black;
 }
-
 
 li {
-    list-style: none;
+  list-style: none;
 }
 a {
-    text-decoration: none;
-    display: block;
-    width: fit-content;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  border-radius: 10px 10px 0 0;
+  overflow: visible;
 }
 
 #wrapper {
-    padding: 15px 0 15px 15px;
-}
-
-h2, h3 {
-    font-size: 1.7rem;
-    font-family: 'Expletus Sans', cursive;
-}
-h2 {
-    align-self: self-start;
-}
-p {
-    font-size: 1.1rem;
-    font-family: 'Rufina', serif;
-}
-
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-section {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 100px;
-}
-figure {
-    position: relative;
-    margin: 0;
-    width: fit-content;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 8px 4px 20px rgba(0, 0, 0, 0.472);
-    background-color: grey;
-    border-radius: 10px;
-}
-figure > figcaption {
-    color: white;
-    text-decoration: none;
-    border-radius:  0 0 10px 10px;
-    background-color: grey;
-    padding: 10px 0;
-}
-img ~ img {
-    border-radius: 10px 10px 0 0;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: whitesmoke;
-    height: 300px;
-    background-color: #292735;
-}
-address {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-address a {
-    color: white;
-    margin-bottom: 20px;
-    text-decoration: underline;
-}
-
-#top {
-text-align: justify;
-}
-
-.cert_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.cert_container a {
-    margin: 15px;
-    border-radius: 5px;
+  padding: 15px 15px 0 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #hero {
-    position: relative;
-    width: 100%;
-    height: 450px;
-    background: whitesmoke url("../assets/hero.png") no-repeat center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-
+  position: relative;
+  width: 100vw;
+  height: 450px;
+  background: whitesmoke url("../assets/hero.png") no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
-.hero_text {
-    border-radius: 15px;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
-    text-align: center;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+.hero-text {
+  position: absolute;
+  top: 25%;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  opacity: 0;
+  transition: opacity 1.5s linear 0.5s;
+  width: 40%;
 }
-.hero_button {
-    position: absolute;
-    top: 60%;
-    left: 47%;
-    background-color: whitesmoke;
-}
-
-.medal, .letter, .cv{
-    position: absolute;
-    top: 45px;
-
+.hero-btn {
+  position: absolute;
+  top: 85%;
+  background-color: whitesmoke;
+  border: solid grey 1px;
+  transform: scale(0);
+  transition: background-color 0.2s linear, color 0.2s linear,
+    transform 1.5s linear 0.5s;
 }
 
-.button {
-    border: solid grey 1px;
-    border-radius: 5px;
-    padding: 5px;
-    width: 150px;
-    text-align: center;
-    font-size: 20px;
-    user-select: none;
-    transition: background-color .2s linear, color .2s linear;
+h2,
+h3 {
+  font-size: 1.7rem;
+  font-family: "Expletus Sans", cursive;
 }
-.button:hover {
-    background-color: grey;
-    color: whitesmoke;
-    cursor: pointer;
+.main-title {
+  align-self: self-start;
+  position: relative;
+  left: -500px;
+  transition: left 1s linear 1s;
+}
+p {
+  font-size: 1.1rem;
+  font-family: "Rufina", serif;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+}
+figure {
+  position: relative;
+  margin: 0;
+  width: fit-content;
+  background-color: grey;
+  border-radius: 10px 10px 0 0;
+  overflow: visible;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.422);
+  transition: box-shadow 0.3s linear;
+  overflow: visible;
+}
+figure:hover {
+  box-shadow: 4px 4px 20px rgb(0, 0, 0);
+}
+figure > figcaption {
+  color: white;
+  text-decoration: none;
+  border-radius: 0 0 10px 10px;
+  background-color: grey;
+  padding: 10px 0;
+  font-size: 1rem;
+}
+img ~ img {
+  border-radius: 10px 10px 0 0;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: whitesmoke;
+  height: 300px;
+  background-color: #292735;
+}
+address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+address a {
+  color: white;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.cert_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cert_container a {
+  margin: 15px;
+  border-radius: 5px;
+}
+
+.medal,
+.letter,
+.cv {
+  position: absolute;
+  top: 45px;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+  text-align: center;
+  font-size: 1.3rem;
+  user-select: none;
+}
+.btn:hover {
+  background-color: grey;
+  color: whitesmoke;
+  cursor: pointer;
 }
 
 .scroll-top-btn {
-    background: transparent url("../assets/chevron-up.png") no-repeat center;
-    background-size: 60%;
-    border-radius: 50%;
-    padding: 25px 0px 45px 0px;
-    position: fixed;
-    right:  -100px;
-    bottom: 10px;
-    width: 75px;
-    text-align: center;
-    border: solid grey 1px;
-    border: solid transparent 1px;
-    transition: background .5s linear, right .3s linear;
+  background: transparent url("../assets/chevron-up.png") no-repeat center;
+  background-size: 60%;
+  border-radius: 50%;
+  padding: 25px 0px 45px 0px;
+  position: fixed;
+  right: -100px;
+  bottom: 10px;
+  width: 75px;
+  text-align: center;
+  border: solid transparent 1px;
+  transition: background 0.5s linear, right 0.3s linear;
 }
 .scroll-top-btn:hover {
-    background: transparent url("../assets/chevron-up-hover.png") no-repeat center;
-    background-size: 60%;
-    background-color: grey;
-    cursor: pointer;
+  background: transparent url("../assets/chevron-up-hover.png") no-repeat center;
+  background-size: 60%;
+  background-color: grey;
+  cursor: pointer;
 }
 
 #vision {
-    display: block;
-    width: 100%;
-    margin-bottom: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
 }
 .vision_content {
-    position: relative;
-    min-height: 540px;
+  position: relative;
+  min-height: 540px;
+}
+
+#intro {
+  position: relative;
+  right: -100vw;
+  transition: right 1s linear 1s;
+}
+#cv {
+  position: relative;
+  left: -100vw;
+  transition: left 1s linear 1s;
 }
