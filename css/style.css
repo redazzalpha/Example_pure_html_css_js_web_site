@@ -14,7 +14,7 @@ body {
 }
 .bg-frame {
   position: absolute;
-  top: 1350px;
+  top: 1550px;
   background-color: whitesmoke;
   background-image: url("../assets/bg.png");
   background-repeat: no-repeat;
@@ -42,7 +42,7 @@ header {
   font-family: "Expletus Sans", cursive;
   font-style: italic;
   z-index: 2;
-  transition: top 1s linear;
+  transition: top 0.5s linear;
 }
 #header_logo {
   flex-grow: 1;
@@ -102,6 +102,7 @@ a {
   position: relative;
   width: 100vw;
   height: 450px;
+  height: 700px;
   background: whitesmoke url("../assets/hero.png") no-repeat center;
   background-size: cover;
   display: flex;
@@ -109,24 +110,24 @@ a {
 }
 .hero-text {
   position: absolute;
-  top: 25%;
+  top: 35%;
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
   border-radius: 15px;
   padding: 15px;
   color: white;
   opacity: 0;
-  transition: opacity 1.5s linear 0.5s;
   width: 40%;
+  transition: opacity 1s linear;
 }
 .hero-btn {
   position: absolute;
-  top: 85%;
+  top: 75%;
   background-color: whitesmoke;
   border: solid grey 1px;
   transform: scale(0);
   transition: background-color 0.2s linear, color 0.2s linear,
-    transform 1.5s linear 0.5s;
+    transform 1s linear;
 }
 
 h2,
@@ -138,7 +139,7 @@ h3 {
   align-self: self-start;
   position: relative;
   left: -500px;
-  transition: left 1s linear 1s;
+  transition: left 0.5s linear;
 }
 p {
   font-size: 1.1rem;
@@ -263,21 +264,21 @@ address a {
 #intro {
   position: relative;
   right: -100vw;
-  transition: right 1s linear 1s;
+  transition: right 0.5s linear;
 }
 #cv {
   position: relative;
   left: -100vw;
-  transition: left 1s linear 1s;
+  transition: left 0.5s linear;
 }
 #cert {
   transform: scale(0);
-  transition: transform 1.5s linear 1.5s;
+  transition: transform 0.5s linear;
 }
 #exp {
   position: relative;
-  left: -100vw;
-  transition: left 1s linear 2.5s;
+  right: -100vw;
+  transition: right 0.5s linear;
 }
 #vision {
   display: block;
@@ -285,7 +286,7 @@ address a {
   margin-bottom: 0;
   padding-bottom: 0;
   transform: scale(0);
-  transition: transform 1.2s linear 3s;
+  transition: transform 0.5s linear;
 }
 .vision_content {
   position: relative;
