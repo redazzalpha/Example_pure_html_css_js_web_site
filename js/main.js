@@ -33,14 +33,14 @@ function onScroll() {
 
 // functions
 function computeOffsets() {
-  let computedOffset = 0;
+  let computedOffset = 75;
   const sections = document.querySelectorAll("section");
   let i = 0;
   for (const key of Object.keys(offsets)) {
     computedOffset += sections[i].clientHeight;
     offsets[`${key}`] = computedOffset;
     i++;
-    console.log(`${JSON.stringify(offsets)}`);
+    // console.log(`${JSON.stringify(offsets)}`);
   }
 }
 function scrollAnimateElement() {
@@ -71,7 +71,8 @@ function scrollAnimateElement() {
 
   currentScroll = scroll;
 
-  console.log(scroll);
+  // console.log(scroll);
+  console.log(visionSection.clientHeight);
 }
 function openMenu() {
   const menuItems = document.querySelectorAll("[class~='item']");
@@ -100,9 +101,7 @@ function openMenu() {
     }, 2500);
   }
 }
-function contactMe() {
-  console.log("in the js function contact me");
-}
+function contactMe() {}
 function goTop() {
   window.scroll({ behavior: "smooth", top: 0 });
 }
@@ -176,5 +175,5 @@ window.onload = () => {
 
   window.onscroll = onScroll;
 
-  console.log(window.screen.width);
+  // console.log(window.screen.width);
 };

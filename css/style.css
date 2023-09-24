@@ -153,7 +153,6 @@ a {
 }
 
 #wrapper {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,11 +162,11 @@ a {
   overflow-x: hidden;
 }
 .bottom-page {
-  position: absolute;
+  position: relative;
   right: 0;
   bottom: 0;
   z-index: -1;
-  /* align-self: end; */
+  align-self: end;
 }
 
 #hero {
@@ -189,6 +188,7 @@ a {
   color: white;
   opacity: 0;
   width: 95%;
+  padding: 50px;
   transition: opacity 1s linear;
 }
 .hero_text > h1 {
@@ -199,7 +199,7 @@ a {
 }
 .hero_btn {
   position: absolute;
-  top: 60%;
+  top: 65%;
   background-color: whitesmoke;
   border: solid grey 1px;
   transform: scale(0);
@@ -216,6 +216,7 @@ h3 {
   align-self: self-start;
   position: relative;
   left: -500px;
+  text-align: center;
   transition: left 0.5s linear;
 }
 p {
@@ -350,16 +351,22 @@ address a {
   right: -100vw;
   transition: right 0.5s linear;
 }
-#vision {
+section#vision {
   display: block;
   width: 100%;
   margin-bottom: 0;
   padding-bottom: 0;
   transform: scale(0);
   transition: transform 0.5s linear;
-  padding-bottom: 300px;
 }
 .vision_content {
   position: relative;
   min-height: 540px;
+}
+
+.codeline {
+  border-radius: 15px;
+  width: 90%;
+  margin: 25px 0;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.703);
 }
