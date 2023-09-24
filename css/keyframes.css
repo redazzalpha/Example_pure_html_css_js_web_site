@@ -1,6 +1,19 @@
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: -720deg;
+  }
+}
+
 @keyframes bg-breath {
-    0% {background-image: url("../assets/bg.png");}
-    100% {background-image: url("../assets/bg1.png");}
+  0% {
+    background-image: url("../assets/bg.png");
+  }
+  100% {
+    background-image: url("../assets/bg1.png");
+  }
 }
 /* @-webkit-keyframes bg-breath {
     0% {background-image: url("../assets/bg.png");}

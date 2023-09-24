@@ -147,8 +147,8 @@ window.onload = () => {
   header = document.querySelector("header");
   nav = document.querySelector("nav");
   headerBtnLoading = document.querySelector(".header_btn_loading");
-  heroText = document.querySelector(".hero-text");
-  heroBtn = document.querySelector(".hero-btn");
+  heroText = document.querySelector(".hero_text");
+  heroBtn = document.querySelector(".hero_btn");
   scrollTopBtn = document.querySelector(".scroll-top-btn");
   mainTitle = document.querySelector(".main-title");
   introSection = document.querySelector("#intro");
