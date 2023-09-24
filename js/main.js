@@ -13,7 +13,6 @@ let expSection;
 let visionSection;
 let navLoadingBtn;
 let currentScroll = 0;
-
 let scrollOffset = 590;
 
 const offsets = {
@@ -74,7 +73,6 @@ function scrollAnimateElement() {
 
   console.log(scroll);
 }
-
 function openMenu() {
   const menuItems = document.querySelectorAll("[class~='item']");
 
@@ -162,8 +160,6 @@ window.onload = () => {
 
   nav.classList.add("nav_disappear");
 
-  console.log(window.screen.width);
-
   setTimeout(() => {
     slideTop(header);
     setTimeout(() => {
@@ -179,4 +175,6 @@ window.onload = () => {
   }, timeout);
 
   window.onscroll = onScroll;
+
+  console.log(window.screen.width);
 };
