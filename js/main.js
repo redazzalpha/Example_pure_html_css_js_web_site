@@ -1,6 +1,7 @@
 // varialbes
 
 let header;
+let nav;
 let heroText;
 let heroBtn;
 let scrollTopBtn;
@@ -10,8 +11,8 @@ let cvSection;
 let certSection;
 let expSection;
 let visionSection;
+let navLoadingBtn;
 let currentScroll = 0;
-let rest = 0;
 
 let scrollOffset = 590;
 
@@ -73,6 +74,34 @@ function scrollAnimateElement() {
 
   console.log(scroll);
 }
+
+function openMenu() {
+  const menuItems = document.querySelectorAll("[class~='item']");
+
+  if (nav.classList[0] == "nav_disappear") {
+    headerBtnLoading.style.display = "block";
+    setTimeout(() => {
+      headerBtnLoading.style.display = "none";
+    }, 2500);
+    nav.classList.remove("nav_disappear");
+    nav.classList.add("nav_appear");
+    header.style.height = "392px";
+    menuItems.forEach((e) => {
+      e.style.opacity = "1";
+    });
+  } else {
+    headerBtnLoading.style.display = "block";
+    menuItems.forEach((e) => {
+      e.style.opacity = "0";
+    });
+    setTimeout(() => {
+      nav.classList.remove("nav_appear");
+      nav.classList.add("nav_disappear");
+      header.style.height = "75px";
+      headerBtnLoading.style.display = "none";
+    }, 2500);
+  }
+}
 function contactMe() {
   console.log("in the js function contact me");
 }
@@ -116,6 +145,8 @@ function appearReverse(element, reverse) {
 window.onload = () => {
   // init vars
   header = document.querySelector("header");
+  nav = document.querySelector("nav");
+  headerBtnLoading = document.querySelector(".header_btn_loading");
   heroText = document.querySelector(".hero-text");
   heroBtn = document.querySelector(".hero-btn");
   scrollTopBtn = document.querySelector(".scroll-top-btn");
@@ -128,6 +159,8 @@ window.onload = () => {
   visionTitle = document.querySelector(".vision_title");
   visionContent = document.querySelector(".vision_content");
   let timeout = 500;
+
+  nav.classList.add("nav_disappear");
 
   console.log(window.screen.width);
 
