@@ -1,16 +1,19 @@
 @import "fonts.css";
 @import "keyframes.css";
+@import "media-queries.css";
 
 * {
-  overflow-x: hidden;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  background-color: whitesmoke;
 }
 body {
-  font-size: 16px;
+  position: relative;
+  font-size: 1rem;
   padding: 0;
   margin: 0;
-  background-color: whitesmoke;
-  position: relative;
-  box-sizing: border-box;
 }
 .bg-frame {
   position: absolute;
@@ -80,7 +83,6 @@ a {
   display: block;
   width: fit-content;
   border-radius: 10px 10px 0 0;
-  overflow: visible;
 }
 
 #wrapper {
@@ -119,6 +121,12 @@ a {
   opacity: 0;
   width: 40%;
   transition: opacity 1s linear;
+}
+.hero-text > h1 {
+  font-size: 2.5rem;
+}
+.hero-text > p {
+  font-size: 1.5rem;
 }
 .hero-btn {
   position: absolute;
@@ -159,8 +167,7 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 100px;
-  padding-bottom: 50px;
+  padding: 75px 0 50px 0;
 }
 figure {
   position: relative;
@@ -168,10 +175,8 @@ figure {
   width: fit-content;
   background-color: grey;
   border-radius: 10px 10px 0 0;
-  overflow: visible;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.422);
   transition: box-shadow 0.3s linear;
-  overflow: visible;
 }
 figure:hover {
   box-shadow: 4px 4px 20px rgb(0, 0, 0);
@@ -260,7 +265,6 @@ address a {
   background-color: grey;
   cursor: pointer;
 }
-
 #intro {
   position: relative;
   right: -100vw;

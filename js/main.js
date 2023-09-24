@@ -10,25 +10,46 @@ let cvSection;
 let certSection;
 let expSection;
 let visionSection;
+let currentScroll = 0;
+let rest = 0;
 
-let headerOffset = 540;
-let heroOffset = 80;
-let mainTitleOffset = 300;
-let introOffset = 490;
-let cvOffset = 1490;
-let certOffet = 2190;
-let expOffset = 3380;
-let visionOffset = 4000;
+let scrollOffset = 590;
+
+const offsets = {
+  hero: 80,
+  intro: 490,
+  cv: 1490,
+  cert: 2190,
+  exp: 3380,
+  vision: 4500,
+};
 
 // event handlers
 
 function onScroll() {
+  computeOffsets();
+  scrollAnimateElement();
+}
+
+// functions
+function computeOffsets() {
+  let computedOffset = 0;
+  const sections = document.querySelectorAll("section");
+  let i = 0;
+  for (const key of Object.keys(offsets)) {
+    computedOffset += sections[i].clientHeight;
+    offsets[`${key}`] = computedOffset;
+    i++;
+    console.log(`${JSON.stringify(offsets)}`);
+  }
+}
+function scrollAnimateElement() {
   let scroll = window.scrollY;
 
-  if (scrollTopBtn && scroll >= headerOffset) scrollTopBtn.style.right = "10px";
+  if (scrollTopBtn && scroll >= scrollOffset) scrollTopBtn.style.right = "10px";
   else scrollTopBtn.style.right = "-100px";
 
-  if (scroll <= heroOffset) {
+  if (scroll <= offsets.hero) {
     appear(heroText);
     growUp(heroBtn);
   } else {
@@ -36,30 +57,22 @@ function onScroll() {
     growUpReverse(heroBtn, "0");
   }
 
-  // if (scroll > heroOffset && scroll <= mainTitleOffset) slideLeft(mainTitle);
-  // else slideLeftReverse(mainTitle, "-500px");
-
-  // if (scroll > mainTitleOffset && scroll <= introOffset)
-  //   slideRight(introSection);
-  // else slideRightReverse(introSection, "-100vw");
-
-  if (scroll > introOffset && scroll <= cvOffset) slideLeft(cvSection);
+  if (scroll > offsets.intro && scroll <= offsets.cv) slideLeft(cvSection);
   else slideLeftReverse(cvSection, "-100vw");
 
-  if (scroll > cvOffset && scroll <= certOffet) growUp(certSection);
+  if (scroll > offsets.cv && scroll <= offsets.cert) growUp(certSection);
   else growUpReverse(certSection, "0");
 
-  if (scroll > certOffet && scroll <= expOffset) slideRight(expSection);
+  if (scroll > offsets.cert && scroll <= offsets.exp) slideRight(expSection);
   else slideRightReverse(expSection, "-100vw");
 
-  if (scroll > expOffset && scroll <= visionOffset) growUp(visionSection);
+  if (scroll > offsets.exp && scroll <= offsets.vision) growUp(visionSection);
   else growUpReverse(visionSection, "0");
+
+  currentScroll = scroll;
 
   console.log(scroll);
 }
-
-// functions
-
 function contactMe() {
   console.log("in the js function contact me");
 }
@@ -115,6 +128,8 @@ window.onload = () => {
   visionTitle = document.querySelector(".vision_title");
   visionContent = document.querySelector(".vision_content");
   let timeout = 500;
+
+  console.log(window.screen.width);
 
   setTimeout(() => {
     slideTop(header);

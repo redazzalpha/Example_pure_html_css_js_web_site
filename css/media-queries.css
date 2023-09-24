@@ -1,0 +1,45 @@
+@media screen and (min-width: 320px) {
+  body {
+    font-size: 1rem;
+  }
+  nav {
+    display: none;
+  }
+  section.hero-text {
+    width: 90%;
+  }
+  section.hero-text > h1 {
+    font-size: 2rem;
+  }
+  section.hero-text > p {
+    font-size: 1rem;
+  }
+  div.cert_container {
+    flex-direction: column;
+  }
+  section {
+    padding: 75px 0 0 0 !important;
+    margin-bottom: 0 !important;
+  }
+  section#vision {
+    padding-bottom: 400px !important;
+  }
+}
+
+@media screen and (min-width: 375px) {
+}
+
+@media screen and (min-width: 425px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
+
+@media screen and (min-width: 2560px) {
+}
