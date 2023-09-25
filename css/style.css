@@ -1,6 +1,6 @@
 @import "fonts.css";
 @import "keyframes.css";
-/* @import "media-queries.css"; */
+@import "media-queries.css";
 
 * {
   box-sizing: border-box;
@@ -69,7 +69,7 @@ header {
   left: 0px;
   width: 40px;
   border-radius: 50%;
-  animation: spin 3s linear infinite;
+  animation: spin 3s linear;
 }
 
 nav {
@@ -78,7 +78,6 @@ nav {
   font-size: 1.1rem;
   top: -1000px;
   transition: top 1s linear;
-  /* margin-top: 15px; */
 }
 .nav_appear {
   top: 0;
@@ -104,12 +103,8 @@ nav {
 .nav_appear-item-5 {
   transition: opacity 1s linear 0.8s;
 }
-nav ul {
-  /* display: flex; */
-}
 nav > ul > li {
   border: solid grey 1px;
-  /* margin: 0 5px; */
   margin: 10px 0;
   border-radius: 5px;
   display: flex;
@@ -255,8 +250,6 @@ p {
     transform 1s linear;
 }
 
-.cert_container {
-}
 .cert_container a {
   margin: 15px;
   border-radius: 5px;

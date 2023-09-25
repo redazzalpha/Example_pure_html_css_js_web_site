@@ -48,10 +48,9 @@ function computeOffsets() {
     computedOffset += midsection + current;
 
     offsets[`${key}`] = computedOffset;
-    current = midsection * 1.3;
+    current = Math.trunc(midsection * 1.3);
     i++;
   }
-  console.log(`-- offsets: ${JSON.stringify(offsets)}`);
 }
 function scrollAnimateElement() {
   let scroll = window.scrollY;
@@ -80,34 +79,34 @@ function scrollAnimateElement() {
   else growUpReverse(visionSection, "0");
 
   currentScroll = scroll;
-
-  console.log(`-- scroll: ${scroll}`);
 }
 function openMenu() {
-  const menuItems = document.querySelectorAll("[class~='item']");
+  if (window.innerWidth < 1315) {
+    const menuItems = document.querySelectorAll("[class~='item']");
 
-  if (nav.classList[0] == "nav_disappear") {
-    headerBtnLoading.style.display = "block";
-    setTimeout(() => {
-      headerBtnLoading.style.display = "none";
-    }, 2500);
-    nav.classList.remove("nav_disappear");
-    nav.classList.add("nav_appear");
-    header.style.height = "392px";
-    menuItems.forEach((e) => {
-      e.style.opacity = "1";
-    });
-  } else {
-    headerBtnLoading.style.display = "block";
-    menuItems.forEach((e) => {
-      e.style.opacity = "0";
-    });
-    setTimeout(() => {
-      nav.classList.remove("nav_appear");
-      nav.classList.add("nav_disappear");
-      header.style.height = "75px";
-      headerBtnLoading.style.display = "none";
-    }, 2500);
+    if (nav.classList[0] == "nav_disappear") {
+      headerBtnLoading.style.display = "block";
+      setTimeout(() => {
+        headerBtnLoading.style.display = "none";
+      }, 2500);
+      nav.classList.remove("nav_disappear");
+      nav.classList.add("nav_appear");
+      header.style.height = "392px";
+      menuItems.forEach((e) => {
+        e.style.opacity = "1";
+      });
+    } else {
+      headerBtnLoading.style.display = "block";
+      menuItems.forEach((e) => {
+        e.style.opacity = "0";
+      });
+      setTimeout(() => {
+        nav.classList.remove("nav_appear");
+        nav.classList.add("nav_disappear");
+        header.style.height = "75px";
+        headerBtnLoading.style.display = "none";
+      }, 2500);
+    }
   }
 }
 function contactMe() {}
@@ -183,6 +182,4 @@ window.onload = () => {
   }, timeout);
 
   window.onscroll = onScroll;
-
-  // console.log(window.screen.width);
 };
