@@ -33,17 +33,22 @@ function onScroll() {
 
 // functions
 function computeOffsets() {
-  let computedOffset = 0;
+  let computedOffset = -150;
+  let current = 0;
+  let midsection = 0;
   const sections = document.querySelectorAll("section");
 
-  // const arrSections = Array.from(sections);
-  // arrSections.unshift(document.querySelector("#hero"));
-  // arrSections.splice(1, 1);
+  const arrSections = Array.from(sections);
+  arrSections.unshift(document.querySelector("#hero"));
+  arrSections.splice(1, 1);
 
   let i = 0;
   for (const key of Object.keys(offsets)) {
-    computedOffset += sections[i].offsetHeight;
+    midsection = Math.trunc(arrSections[i].clientHeight / 2);
+    computedOffset += midsection + current;
+
     offsets[`${key}`] = computedOffset;
+    current = midsection * 1.3;
     i++;
   }
   console.log(`-- offsets: ${JSON.stringify(offsets)}`);
