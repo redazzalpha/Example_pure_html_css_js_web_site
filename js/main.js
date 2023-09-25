@@ -33,15 +33,20 @@ function onScroll() {
 
 // functions
 function computeOffsets() {
-  let computedOffset = 75;
+  let computedOffset = 0;
   const sections = document.querySelectorAll("section");
+
+  // const arrSections = Array.from(sections);
+  // arrSections.unshift(document.querySelector("#hero"));
+  // arrSections.splice(1, 1);
+
   let i = 0;
   for (const key of Object.keys(offsets)) {
-    computedOffset += sections[i].clientHeight;
+    computedOffset += sections[i].offsetHeight;
     offsets[`${key}`] = computedOffset;
     i++;
-    // console.log(`${JSON.stringify(offsets)}`);
   }
+  console.log(`-- offsets: ${JSON.stringify(offsets)}`);
 }
 function scrollAnimateElement() {
   let scroll = window.scrollY;
@@ -71,8 +76,7 @@ function scrollAnimateElement() {
 
   currentScroll = scroll;
 
-  // console.log(scroll);
-  console.log(visionSection.clientHeight);
+  console.log(`-- scroll: ${scroll}`);
 }
 function openMenu() {
   const menuItems = document.querySelectorAll("[class~='item']");
