@@ -407,6 +407,9 @@ dialog ul li a {
   border-radius: unset;
   color: inherit;
 }
+dialog ul li a:focus {
+  outline: none;
+}
 dialog ul li a img {
   width: 50px;
   margin-right: 10px;
