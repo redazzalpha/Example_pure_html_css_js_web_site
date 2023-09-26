@@ -11,6 +11,10 @@
   section.hero_text {
     width: 60%;
   }
+  div.footer_links {
+    flex-direction: row;
+    align-items: end;
+  }
 }
 
 /* laptop */
