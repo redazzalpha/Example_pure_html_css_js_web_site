@@ -153,7 +153,7 @@ section {
   align-items: center;
   text-align: center;
   padding: 75px 0 50px 0;
-  width: 80%;
+  width: 95%;
 }
 figure {
   position: relative;
@@ -191,10 +191,11 @@ footer {
 }
 .footer_links {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   padding: 15px 0;
+  width: 100%;
 }
 .footer_links a {
   display: flex;
@@ -387,10 +388,12 @@ dialog {
   color: whitesmoke;
   z-index: 2;
 }
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.523);
+}
 dialog p {
   text-align: center;
 }
-
 dialog ul {
   display: flex;
   flex-direction: column;
@@ -416,7 +419,7 @@ dialog ul li a img {
 }
 .dialog_button {
   position: absolute;
-  right: 0;
+  right: 10px;
   width: 35px;
 }
 .dialog_button:hover {

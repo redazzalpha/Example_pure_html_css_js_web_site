@@ -19,12 +19,19 @@
 
 /* laptop */
 @media screen and (min-width: 1024px) {
+  #wrapper section {
+    width: 80%;
+  }
   section.hero_text {
     width: 50%;
   }
   .cert_container {
     display: flex;
     align-items: center;
+  }
+  #contact-me dialog {
+    width: 50%;
+    left: 25%;
   }
 }
 @media screen and (min-width: 1315px) {
