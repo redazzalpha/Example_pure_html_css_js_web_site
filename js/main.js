@@ -12,6 +12,7 @@ let certSection;
 let expSection;
 let visionSection;
 let navLoadingBtn;
+let dialog;
 let currentScroll = 0;
 let scrollOffset = 590;
 
@@ -109,7 +110,12 @@ function openMenu() {
     }
   }
 }
-function contactMe() {}
+function openDialog() {
+  dialog.showModal();
+}
+function closeDialog() {
+  dialog.close();
+}
 function goTop() {
   window.scroll({ behavior: "smooth", top: 0 });
 }
@@ -163,6 +169,7 @@ window.onload = () => {
   visionSection = document.querySelector("#vision");
   visionTitle = document.querySelector(".vision_title");
   visionContent = document.querySelector(".vision_content");
+  dialog = document.querySelector("dialog");
   let timeout = 500;
 
   nav.classList.add("nav_disappear");
