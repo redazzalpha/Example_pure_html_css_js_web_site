@@ -81,34 +81,34 @@ function scrollAnimateElement() {
 
   currentScroll = scroll;
 }
-function openMenu() {
-  if (window.innerWidth < 1315) {
-    const menuItems = document.querySelectorAll("[class~='item']");
-
-    if (nav.classList[0] == "nav_disappear") {
-      headerBtnLoading.style.display = "block";
-      setTimeout(() => {
-        headerBtnLoading.style.display = "none";
-      }, 2500);
-      nav.classList.remove("nav_disappear");
-      nav.classList.add("nav_appear");
-      header.style.height = "392px";
-      menuItems.forEach((e) => {
-        e.style.opacity = "1";
-      });
-    } else {
-      headerBtnLoading.style.display = "block";
-      menuItems.forEach((e) => {
-        e.style.opacity = "0";
-      });
-      setTimeout(() => {
-        nav.classList.remove("nav_appear");
-        nav.classList.add("nav_disappear");
-        header.style.height = "75px";
-        headerBtnLoading.style.display = "none";
-      }, 2500);
-    }
-  }
+function toogleMenu() {
+  console.log("toogling menu here");
+  // if (window.innerWidth < 1315) {
+  //   const menuItems = document.querySelectorAll("[class~='item']");
+  //   if (nav.classList[0] == "nav_disappear") {
+  //     headerBtnLoading.style.display = "block";
+  //     setTimeout(() => {
+  //       headerBtnLoading.style.display = "none";
+  //     }, 2500);
+  //     nav.classList.remove("nav_disappear");
+  //     nav.classList.add("nav_appear");
+  //     header.style.height = "392px";
+  //     menuItems.forEach((e) => {
+  //       e.style.opacity = "1";
+  //     });
+  //   } else {
+  //     headerBtnLoading.style.display = "block";
+  //     menuItems.forEach((e) => {
+  //       e.style.opacity = "0";
+  //     });
+  //     setTimeout(() => {
+  //       nav.classList.remove("nav_appear");
+  //       nav.classList.add("nav_disappear");
+  //       header.style.height = "75px";
+  //       headerBtnLoading.style.display = "none";
+  //     }, 2500);
+  //   }
+  // }
 }
 function openDialog() {
   dialog.showModal();
@@ -172,7 +172,7 @@ window.onload = () => {
   dialog = document.querySelector("dialog");
   let timeout = 500;
 
-  nav.classList.add("nav_disappear");
+  // nav.classList.add("nav_disappear");
 
   setTimeout(() => {
     slideTop(header);

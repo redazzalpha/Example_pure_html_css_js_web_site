@@ -12,34 +12,36 @@
 
   <body>
     <header>
-      <div class="header_logo" onclick="goTop()">Interactive CV</div>
-      <div class="header_btn_container">
-        <img
-          class="header_btn_menu"
-          role="button"
-          src="./assets/menu-hamburger.png"
-          onclick="openMenu()"
-        />
-        <img class="header_btn_loading" src="./assets/loading.png" />
-      </div>
+      <section id="app-bar">
+        <h1 class="header_logo" onclick="goTop()">Interactive CV</h1>
+        <div class="header_btn_container">
+          <img
+            class="header_btn_menu"
+            role="button"
+            src="./assets/menu-hamburger.png"
+            onclick="toogleMenu()"
+          />
+          <img class="header_btn_loading" src="./assets/loading.png" />
+        </div>
+      </section>
       <nav>
         <ul>
           <li class="nav_appear-item-1 item">
-            <a href="#intro_m" onclick="openMenu()">Présentation</a>
+            <a href="#intro_m" onclick="toogleMenu()">Présentation</a>
           </li>
           <li class="nav_appear-item-2 item">
-            <a href="#cv_m" onclick="openMenu()">Mon Cv</a>
+            <a href="#cv_m" onclick="toogleMenu()">Mon Cv</a>
           </li>
           <li class="nav_appear-item-3 item">
-            <a href="#cert_m" onclick="openMenu()"
+            <a href="#cert_m" onclick="toogleMenu()"
               >Diplômes et certifications</a
             >
           </li>
           <li class="nav_appear-item-4 item">
-            <a href="#exp_m" onclick="openMenu()">Mon expérience en bref</a>
+            <a href="#exp_m" onclick="toogleMenu()">Mon expérience en bref</a>
           </li>
           <li class="nav_appear-item-5 item">
-            <a href="#vision_m" onclick="openMenu()"
+            <a href="#vision_m" onclick="toogleMenu()"
               >Vision développeur et développement</a
             >
           </li>

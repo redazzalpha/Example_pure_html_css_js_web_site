@@ -25,16 +25,12 @@ body {
 }
 
 header {
-  display: grid;
-  grid-template-areas:
-    "logo logo logo logo logo logo btn"
-    "nav nav nav nav nav nav nav";
-  row-gap: 15px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   position: fixed;
   top: -100px;
   width: 100%;
-  height: 75px;
   padding: 15px;
   color: white;
   background: url("../assets/bg_header.png") no-repeat center;
@@ -43,10 +39,12 @@ header {
   font-family: "Expletus Sans", cursive;
   font-style: italic;
   z-index: 1;
-  transition: top 0.5s linear, height 1s linear;
+  transition: top 0.5s linear;
+  /* transition: top 0.5s linear, height 1s linear; */
 }
 .header_logo {
-  grid-area: logo;
+  flex-grow: 1;
+  text-align: start;
   font-size: 2.2rem;
 }
 .header_logo:hover {
@@ -54,7 +52,6 @@ header {
   user-select: none;
 }
 .header_btn_container {
-  grid-area: btn;
   position: relative;
 }
 .header_btn_menu {
@@ -62,7 +59,7 @@ header {
   width: 40px;
   border-radius: 50%;
   border: solid whitesmoke 1px;
-  transition: background-color 0.2s linear;
+  /* transition: background-color 0.2s linear; */
 }
 .header_btn_menu:hover {
   background-color: grey;
@@ -75,39 +72,44 @@ header {
   left: 0px;
   width: 40px;
   border-radius: 50%;
-  animation: spin 3s linear;
+  /* animation: spin 3s linear; */
+}
+
+#app-bar {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
 }
 
 nav {
-  position: relative;
-  grid-area: nav;
   font-size: 1.1rem;
-  top: -1000px;
-  transition: top 1s linear;
+  display: none;
+
+  /* transition: top 1s linear; */
 }
 .nav_appear {
-  top: 0;
+  /* top: 0; */
 }
 .nav_disappear {
-  top: -375px;
+  /* top: -375px; */
 }
-[class~="item"] {
-  opacity: 0;
+nav [class~="item"] {
+  /* opacity: 0; */
 }
 .nav_appear-item-1 {
-  transition: opacity 1s linear 1.6s;
+  /* transition: opacity 1s linear 1.6s; */
 }
 .nav_appear-item-2 {
-  transition: opacity 1s linear 1.4s;
+  /* transition: opacity 1s linear 1.4s; */
 }
 .nav_appear-item-3 {
-  transition: opacity 1s linear 1.2s;
+  /* transition: opacity 1s linear 1.2s; */
 }
 .nav_appear-item-4 {
-  transition: opacity 1s linear 1s;
+  /* transition: opacity 1s linear 1s; */
 }
 .nav_appear-item-5 {
-  transition: opacity 1s linear 0.8s;
+  /* transition: opacity 1s linear 0.8s; */
 }
 nav > ul > li {
   border: solid grey 1px;
@@ -191,11 +193,10 @@ footer {
 }
 .footer_links {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   padding: 15px 0;
-  width: 100%;
 }
 .footer_links a {
   display: flex;
@@ -351,13 +352,6 @@ section#vision {
   margin: 25px 0;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.703);
 }
-.bottom-page {
-  position: relative;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  align-self: end;
-}
 .bg-frame {
   position: absolute;
   top: 1550px;
@@ -375,6 +369,13 @@ section#vision {
   -moz-animation: bg-breath 7s ease-in alternate infinite;
   -o-animation: bg-breath 7s ease-in alternate infinite;
 }
+.bottom-page {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  align-self: end;
+}
 
 dialog {
   position: fixed;
@@ -387,9 +388,6 @@ dialog {
   background-color: rgb(31, 31, 31);
   color: whitesmoke;
   z-index: 2;
-}
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.523);
 }
 dialog p {
   text-align: center;
@@ -419,7 +417,7 @@ dialog ul li a img {
 }
 .dialog_button {
   position: absolute;
-  right: 10px;
+  right: 0;
   width: 35px;
 }
 .dialog_button:hover {
