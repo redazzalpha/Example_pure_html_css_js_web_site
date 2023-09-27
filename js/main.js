@@ -48,6 +48,7 @@ function computeOffsets() {
     midsection = arrSections[i].clientHeight / 2;
     computedOffset += midsection + current;
     offsets[`${key}`] = computedOffset;
+    if (i == 4) offsets[`${key}`] += 100;
     current = midsection;
     i++;
   }

@@ -399,7 +399,8 @@ dialog ul li a img {
 }
 .dialog_button {
   position: absolute;
-  right: 0;
+  top: 0px;
+  right: 3px;
   width: 35px;
 }
 .dialog_button:hover {
