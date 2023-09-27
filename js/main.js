@@ -1,5 +1,4 @@
-// varialbes
-
+//#region vars
 let header;
 let nav;
 let heroText;
@@ -13,9 +12,9 @@ let expSection;
 let visionSection;
 let navLoadingBtn;
 let dialog;
+let menuItems;
 let currentScroll = 0;
 let scrollOffset = 590;
-
 const offsets = {
   hero: 80,
   intro: 490,
@@ -24,32 +23,32 @@ const offsets = {
   exp: 3380,
   vision: 4500,
 };
+//#endregion
 
-// event handlers
-
+//#region event handlers
 function onScroll() {
   computeOffsets();
   scrollAnimateElement();
 }
+//#endregion
 
-// functions
+//#region functions
 function computeOffsets() {
-  let computedOffset = -150;
+  let computedOffset = window.innerWidth > 425 ? -100 : 150;
   let current = 0;
   let midsection = 0;
   const sections = document.querySelectorAll("section");
 
   const arrSections = Array.from(sections);
   arrSections.unshift(document.querySelector("#hero"));
-  arrSections.splice(1, 1);
+  arrSections.splice(1, 2);
 
   let i = 0;
   for (const key of Object.keys(offsets)) {
-    midsection = Math.trunc(arrSections[i].clientHeight / 2);
+    midsection = arrSections[i].clientHeight / 2;
     computedOffset += midsection + current;
-
     offsets[`${key}`] = computedOffset;
-    current = Math.trunc(midsection * 1.3);
+    current = midsection;
     i++;
   }
 }
@@ -82,33 +81,45 @@ function scrollAnimateElement() {
   currentScroll = scroll;
 }
 function toogleMenu() {
-  console.log("toogling menu here");
-  // if (window.innerWidth < 1315) {
-  //   const menuItems = document.querySelectorAll("[class~='item']");
-  //   if (nav.classList[0] == "nav_disappear") {
-  //     headerBtnLoading.style.display = "block";
-  //     setTimeout(() => {
-  //       headerBtnLoading.style.display = "none";
-  //     }, 2500);
-  //     nav.classList.remove("nav_disappear");
-  //     nav.classList.add("nav_appear");
-  //     header.style.height = "392px";
-  //     menuItems.forEach((e) => {
-  //       e.style.opacity = "1";
-  //     });
-  //   } else {
-  //     headerBtnLoading.style.display = "block";
-  //     menuItems.forEach((e) => {
-  //       e.style.opacity = "0";
-  //     });
-  //     setTimeout(() => {
-  //       nav.classList.remove("nav_appear");
-  //       nav.classList.add("nav_disappear");
-  //       header.style.height = "75px";
-  //       headerBtnLoading.style.display = "none";
-  //     }, 2500);
-  //   }
-  // }
+  if (window.innerWidth < 1315) {
+    let opacityDelay;
+    if (nav.style.top == "-360px" || nav.style.top == "") {
+      /* nav bar appearing */
+      nav.style.position = "relative";
+      nav.style.top = "0";
+      header.style.height = "360px";
+      opacityDelay = 1.6;
+      menuItems.forEach((navItem) => {
+        navItem.style.transition = `opacity 1s ${opacityDelay}s`;
+        navItem.style.opacity = "1";
+        opacityDelay -= 0.2;
+      });
+    } else {
+      /* nav bar disappearing*/
+      opacityDelay = 0.5;
+      menuItems.forEach((navItem) => {
+        navItem.style.transition = `opacity 1s ${opacityDelay}s`;
+        navItem.style.opacity = "0";
+        opacityDelay -= 0.1;
+      });
+      setTimeout(() => {
+        nav.style.position = "absolute";
+        nav.style.top = "-360px";
+        header.style.height = "75px";
+      }, 1300);
+    }
+  }
+}
+function wipeMenu() {
+  if (window.innerWidth < 1315) {
+    menuItems.forEach((navItem) => {
+      navItem.style.transition = `none`;
+      navItem.style.opacity = "0";
+    });
+    nav.style.position = "absolute";
+    nav.style.top = "-360px";
+    header.style.height = "75px";
+  }
 }
 function openDialog() {
   dialog.showModal();
@@ -151,6 +162,7 @@ function growUpReverse(element, reverse) {
 function appearReverse(element, reverse) {
   element.style.opacity = reverse;
 }
+//#endregion
 
 // entry point
 window.onload = () => {
@@ -170,9 +182,8 @@ window.onload = () => {
   visionTitle = document.querySelector(".vision_title");
   visionContent = document.querySelector(".vision_content");
   dialog = document.querySelector("dialog");
+  menuItems = document.querySelectorAll("[class~='item']");
   let timeout = 500;
-
-  // nav.classList.add("nav_disappear");
 
   setTimeout(() => {
     slideTop(header);
@@ -189,4 +200,5 @@ window.onload = () => {
   }, timeout);
 
   window.onscroll = onScroll;
+  window.onresize = wipeMenu;
 };

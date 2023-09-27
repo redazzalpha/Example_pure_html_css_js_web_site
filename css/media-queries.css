@@ -37,6 +37,7 @@
 @media screen and (min-width: 1315px) {
   body header {
     flex-direction: row;
+    height: 75px !important;
   }
   header #app-bar {
     flex-grow: 1;
@@ -44,6 +45,12 @@
   }
   header nav {
     display: block;
+    position: relative !important;
+    top: 0 !important;
+    width: unset;
+  }
+  header nav [class~="item"] {
+    opacity: 1 !important;
   }
   header nav ul {
     display: flex;
