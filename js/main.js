@@ -13,6 +13,7 @@ let visionSection;
 let navLoadingBtn;
 let dialog;
 let menuItems;
+let bottomPage;
 let currentScroll = 0;
 let scrollOffset = 590;
 const offsets = {
@@ -76,8 +77,12 @@ function scrollAnimateElement() {
   if (scroll > offsets.cert && scroll <= offsets.exp) slideRight(expSection);
   else slideRightReverse(expSection, "-100vw");
 
-  if (scroll > offsets.exp && scroll <= offsets.vision) growUp(visionSection);
+  if (scroll > offsets.exp && scroll <= offsets.vision + 1000)
+    growUp(visionSection);
   else growUpReverse(visionSection, "0");
+
+  if (scroll > offsets.vision - 300) appear(bottomPage);
+  else appearReverse(bottomPage, 0);
 
   currentScroll = scroll;
 }
@@ -183,6 +188,7 @@ window.onload = () => {
   visionTitle = document.querySelector(".vision_title");
   visionContent = document.querySelector(".vision_content");
   dialog = document.querySelector("dialog");
+  bottomPage = document.querySelector(".bottom-page");
   menuItems = document.querySelectorAll("[class~='item']");
   let timeout = 500;
 
